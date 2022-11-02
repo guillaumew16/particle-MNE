@@ -124,9 +124,9 @@ function plot_V(gfun, T, copies_w, copies_z, avg_w, avg_z,
     savefig(plt_V, fn)
 
     eps = 1e-30 # avoid PyPlot crashing when y-axis=0 in log plot
-    plt_V_log = plot(range(1, stop=T, step=evalVevery), eps.+ Vtots[1:evalVevery:T], xlabel="k", label="", yscale=:log10)
-    plot!(range(1, stop=T, step=evalVevery), eps.+ Vweis[1:evalVevery:T], xlabel="k", line=:dash, label="weight term", yscale=:log10)
-    plot!(range(1, stop=T, step=evalVevery), eps.+ Vposs[1:evalVevery:T], xlabel="k", line=:dot, label="position term", yscale=:log10)
+    plt_V_log = plot(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vtots[1:evalVevery:T]), xlabel="k", label="", yscale=:log10)
+    plot!(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vweis[1:evalVevery:T]), xlabel="k", line=:dash, label="weight term", yscale=:log10)
+    plot!(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vposs[1:evalVevery:T]), xlabel="k", line=:dot, label="position term", yscale=:log10)
     # hline!([div0s[T+2]], label="avg iterate") --> not defined
     title!("Lyapunov potential of iterates -- $z_str (log-linear scale)")
     fn = "$resultdir/V_$(z_str)_logscale.png"
@@ -172,9 +172,9 @@ function plot_V_xy(gfun, T, copies_wx, copies_x, copies_wy, copies_y, avg_wx, av
     savefig(plt_Vxy, fn)
 
     eps = 1e-30 # avoid PyPlot crashing when y-axis=0 in log plot
-    plt_Vxy_log = plot(range(1, stop=T, step=evalVevery), eps.+ Vtots_xy[1:evalVevery:T], xlabel="k", label="", yscale=:log10)
-    plot!(range(1, stop=T, step=evalVevery), eps.+ Vweis_xy[1:evalVevery:T], xlabel="k", line=:dash, label="weight term", yscale=:log10)
-    plot!(range(1, stop=T, step=evalVevery), eps.+ Vposs_xy[1:evalVevery:T], xlabel="k", line=:dot, label="position term", yscale=:log10)
+    plt_Vxy_log = plot(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vtots_xy[1:evalVevery:T]), xlabel="k", label="", yscale=:log10)
+    plot!(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vweis_xy[1:evalVevery:T]), xlabel="k", line=:dash, label="weight term", yscale=:log10)
+    plot!(range(1, stop=T, step=evalVevery), eps.+ max.(0, Vposs_xy[1:evalVevery:T]), xlabel="k", line=:dot, label="position term", yscale=:log10)
     # hline!([div0s[T+2]], label="avg iterate") --> not defined
     title!("Lyapunov potential of iterates (for x + for y) (log-linear scale)")
     fn = "$resultdir/Vxy_logscale.png"

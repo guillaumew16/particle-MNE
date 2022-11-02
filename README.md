@@ -9,8 +9,8 @@ The required julia packages are listed in the project file `Project.toml`.
 1. Install conda and julia. (Tested with conda v4.14.0, julia v1.6.3.)
 2. In Unix shell:
 ```bash
-conda create -n particle_minmax
-conda activate particle_minmax
+conda create -n particle_MNE
+conda activate particle_MNE
 conda install jupyter # or conda install -c conda-forge jupyterlab
 ```
 3. In julia REPL:
@@ -21,7 +21,7 @@ pkg"instantiate"
 ```
 4. In Unix shell:
 ```bash
-# conda activate particle_minmax
+# conda activate particle_MNE
 jupyter notebook # or jupyter lab
 ```
 
