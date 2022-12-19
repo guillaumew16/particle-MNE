@@ -47,7 +47,7 @@ Notebook `particle_random_fourier_1D.ipynb`.
 Makes use of functions defined in `utils/` and in `particle_1D/`.
 
 ### A synthetic example where the continuous-time flow of CP-PP does not converge
-Notebook `particle_YPhsieh_1D.ipynb`.
+Notebook `particle_fourier_1D_counterexample.ipynb`.
 Makes use of functions defined in `utils/` and in `particle_1D/`.
 
 ### Max-F1-margin classification with 2LNNs
